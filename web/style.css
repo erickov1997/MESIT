@@ -1,0 +1,180 @@
+body{
+    background: #f7f7f7;     
+    }
+
+#message{
+    width: 100%;
+}
+
+
+
+.menunav{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 30px 5px 30px;
+    flex-wrap: wrap;
+}
+.menunav input{
+     padding: 5px 55px 5px 55px;
+     margin-bottom: 10px;
+}
+.navbar-nav li{
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+.navbar-nav li a{
+    
+    color: white;
+    text-decoration: none;
+    
+}
+.btn-m{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn-m input{
+    padding: 5px 40px 5px 40px;
+    margin-top: 10px;
+}
+
+
+.colores{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+.colores input,.buzzeropt input{
+    padding: 5px 35px 5px 35px;
+}
+
+
+.opt{
+    display:flex;
+    justify-content: space-around;
+}
+
+.opt input{
+    padding: 5px 35px 5px 35px;
+}
+
+.title{
+    text-align: center;
+}
+.seg-container{
+    display: flex;
+    justify-content: space-around;
+     flex-wrap: wrap
+}
+
+.green,.off{
+    margin-right: 10px;
+}
+
+.blue,.onbz{
+    margin-left: 10px;
+}
+
+.mode{
+    display: flex;
+    justify-content: center;
+}
+
+.mode_title h3{
+    text-align: center;
+}
+
+.seg3,.seg4,.seg5,.buzzer{
+    margin-top: 15px;
+}
+
+.segmentos{
+  
+}
+
+.card{
+    box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);
+}
+
+.histtable thead{
+    background: black;
+    color: white;
+    border-right: black;
+    text-align: center;
+}
+
+.seg-container2{
+    display: grid;
+    text-align: center;
+    
+}
+
+.mescont{
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    text-align: center
+    
+}
+
+.seg1 label{
+    margin-right: 10px;
+}
+
+/*.seg-container2 .boton{
+    width: 112.64px;
+    height: 36px
+}*/
+
+.filastate{
+    display:flex;
+    justify-content: space-around;
+}
+.estado{
+    
+   /* color:#f7f7f7;*/
+    color:transparent;
+}
+.btn2fila{
+    display: flex;
+    justify-content: center
+}
+
+.state{
+    display:flex;
+    justify-content: flex-end
+   
+}
+
+
+#seg1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+/*@media (min-width: 320px) and (max-width: 700px) {
+    .segfil{
+        margin-left: 128px;
+    }
+    
+    .colores{
+        
+        justify-content: center;
+    }
+}
+@media (min-width: 701px) and (max-width: 820px) {
+    .segfil{
+        margin-left: 195px;
+    }
+    .colores{
+        
+        justify-content: center;
+    }
+
+}*/

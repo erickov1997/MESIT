@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"></link>
+    <h:outputStylesheet library="webjars" name="font-awesome/4.7.0/css/font-awesome.min-jsf.css" />
+    
+    <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    
+    <h:head>
+        <title>MES IT</title>
+    </h:head>
+    <h:body>
+        <h:form>         
+            <div class="row">
+                <div class="col-12 ">
+                    <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">-->
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+                        <a class="navbar-brand" href="#">Amats Electric</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">                           
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <h:commandLink action="index.xhtml" class="navli">MES IT</h:commandLink>
+                                </li>
+
+                                <li class="nav-item active">
+                                    <h:commandLink action="mode_segmento.xhtml" class="navli">Mode Segmentos</h:commandLink>
+                                </li>
+                                <li class="nav-item active">
+                                    <h:commandLink action="GraficaSegmentos.xhtml" class="navli">Grafica</h:commandLink>
+                                </li>
+                                <li class="nav-item active">                                     
+                                    <h:commandLink action="historicoProccess.xhtml" class="navli">Historico</h:commandLink>
+                                </li>
+                            </ul>                         
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </h:form>
+
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-xs-5 col-4"></div>
+            <div class="col-2">
+                <h:form  style="display:flex; justify-content: space-around">  
+                <h:commandButton value="" action="#" style="background:transparent;border:none "> </h:commandButton>
+                    <h:commandButton value="&#xf1c1;" class="fas fa-file-pdf" action="#{Reporteapp.exportarPDF(actionEvent)}" style="border:none;font-size:30px;color:#ae201f;background: transparent"> </h:commandButton>
+                    <h:commandButton value="&#xf02f;" action="#{Reporteapp.verPDF(actionEvent)}" class="fas fa-file-pdf" style="border:none;font-size: 30px;color: #555556;background: transparent"/>
+                    <h:commandButton value="&#xf1c3;" action="#{Reporteapp.exportarExcel(actionEvent)}" class="fas fa-file-excel" style="border:none;font-size: 30px;color: #337044;background: transparent"/>
+                    <h:commandButton value="&#xf1c4;" action="#{Reporteapp.exportarPPT(actionEvent)}" class="fas fa-file-powerpoint" style="border:none;font-size: 30px;color: #b63420;background: transparent"/>
+                    <h:commandButton value="&#xf1c2;" action="#{Reporteapp.exportarDOC(actionEvent)}" class="fas fa-file-word" style="border:none;font-size: 30px;color: #295294;background: transparent"/>
+
+                </h:form> 
+            </div>
+            <div class="col-lg-5 col-md-5 col-xs-5 col-4"></div>
+        </div>
+
+        <h:form>
+
+            <h:panelGroup id="tablehist">  
+
+
+                <div class="row mt-5">
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-2"></div>
+                    <a href="../../../../AppData/Local/Temp/Historico.url"></a>
+                    <div class="col-lg-6 col-md-6 col-xs-8 col-8">
+
+
+                        <table class="table" style="text-align: center;box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 40%);">
+                            <!--<thead class="thead-dark">-->
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th colspan="2">TRF-2500A</th>
+                                    <th colspan="2">*76262-4KG0A*</th>
+                                </tr>
+
+                                <tr>
+                                    <th scope="col">Grupo #/ No.</th>
+                                    <th scope="col">Operadores/ </th>
+                                    <th scope="col">Revisado/ </th>
+                                    <th scope="col">Realizado/ </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="datosG">
+
+                                    <td></td>
+                                    <td ></td>
+                                    <td></td>
+                                    <td> <h:outputLabel for="tablehist" value="#{appGetProcces.nom}"/></td>
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table" style="text-align: center;box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 40%);">
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2" style="padding-top: 45px;">
+                                        Modelo/ **
+                                        <br/>
+                                    </td>
+                                    <td colspan="1" style="font-size: 14px;">Numero de <br/> parte/ </td>
+                                    <td colspan="3" id="container_No_parte">
+                                        <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+                                        <h2><h:outputLabel for="nparte" value="#{appGetProcces.nparte}"/></h2>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" style="font-size: 14px;">Nombre de <br/> parte</td>
+                                    <td colspan="3" id="container_nom_parte"> 
+                                        <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+                                        <h4><h:outputLabel for="tablehist" value="#{appGetProcces.nomparte}"/></h4>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-2"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-2">
+                        
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-8 col-8">
+                        <h:outputLabel value="Fecha: #{appGetProcces.dia}/#{appGetProcces.mes}/#{appGetProcces.año}"></h:outputLabel>
+                        <table class="table" style="text-align: center;box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 40%);">
+                            <thead class="thead-dark">
+                                
+                                <tr >
+                                    <th colspan="2">Preparacion/02</th>
+                                    <th colspan="2">Proceso/ (01)</th>
+                                    <th colspan="2"></th>
+                                </tr>
+
+                                <tr>
+
+                                    <th scope="col">inicio</th>
+                                    <th scope="col">final</th>
+                                    <th scope="col">inicio</th>
+                                    <th scope="col">final</th>
+                                    <th scope="col">Piezas ok/</th>
+                                </tr>
+                            </thead>
+                            <tbody id="output" >
+                                <tr id="datosProc">
+
+
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+                                    <td> <h:outputLabel for="tablehist" value="#{appGetProcces.hora_ini_prep}:#{appGetProcces.min_ini_prep}:#{appGetProcces.seg_ini_prep}" ></h:outputLabel></td>
+
+                                    <td > <h:outputLabel for="tablehist" value="#{appGetProcces.hora_fin_prep}:#{appGetProcces.min_fin_prep}:#{appGetProcces.seg_fin_prep}" ></h:outputLabel>  </td>
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+
+                                    <td > <h:outputLabel for="tablehist" value="#{appGetProcces.hora_ini_proc} :#{appGetProcces.min_ini_proc}:#{appGetProcces.seg_ini_proc}" /> </td>
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+
+                                    <td ><h:outputLabel for="tablehist" value="#{appGetProcces.hora_fin_proc} :#{appGetProcces.min_fin_proc}:#{appGetProcces.seg_fin_proc}" /> </td>
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+
+                                    <f:ajax render="tablehist" event="mousemove" listener="#{appGetProcces.consultProcces(event)}"/>
+                                    <td> <h:outputLabel for="tablehist" value="#{appGetProcces.piezas}" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-2 col-2"></div>
+
+                </div>
+            </h:panelGroup>  
+        </h:form>
+
+
+
+    </h:body>
+
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>-->
+
+    <script src="public/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="public/popper.min.js" type="text/javascript"></script>
+    <script src="public/js/bootstrap.min.js" type="text/javascript"></script>
+    
+    
+</html>
+
+
